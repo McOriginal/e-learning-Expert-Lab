@@ -1,0 +1,140 @@
+
+
+.container{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+}
+
+.container h1{
+    font-size: 1.5rem;
+    font-family: var(--titlefont);
+    color: #000000f6;
+    margin: 0.5rem auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.container .form_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.form_container .contact{
+    width: 700px;
+    height: 100%;
+    margin: 0.2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    border: 2px solid var(--lightblue);
+    box-shadow: 2px 2px 20px rgba(0, 0, 1, 0.749);
+}
+
+ .contact form{
+    width: 100%;
+    padding: 15px;
+    margin: 0.2rem;
+    display: flex;
+    flex-direction: column;
+ }
+
+.contact .input_box{
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+}
+
+.input_box input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.input_box input::placeholder{
+    font-family: var(--font);
+}
+
+.input_box input:focus{
+    font-size: 0.7rem;
+    font-family: var(--font);
+}
+
+.input_box input:valid{
+    outline: 1px solid var(--lightblue);
+    font-size: 0.8rem;
+    font-family: var(--font);
+}
+
+
+
+.contact button{
+    display: block;
+    width: 200px;
+    padding: 15px;
+    font-size: 0.8rem;
+    font-family: var(--font);
+    color: var(--bluecolor);
+    margin: 0.4rem auto;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+    background: transparent;
+    border: 2px solid var(--bluecolor);
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(41, 40, 40, 0.758);
+    transition: all ease-in-out 0.4s;
+}
+
+.contact button:hover{
+    background: blue;
+    border: 1px solid #ffff;
+    transform: scale(0.9);
+    color: white;
+}
+
+
+
+@media screen and (max-width: 730px) {
+
+
+    .container h1{
+        font-size: 1.2rem;
+    }
+    .form_container .contact{
+        width: 500px;
+        height: 400px;
+    }
+
+    .contact button{
+        font-size: 0.7rem;
+    }
+}
+
+
+
+
+@media screen and (max-width: 520px) {
+    .form_container .contact{
+        width: 100%;
+        height: 400px;
+    }
+
+}
+
+
+
+    

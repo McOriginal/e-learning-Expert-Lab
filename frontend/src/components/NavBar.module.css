@@ -1,0 +1,282 @@
+.navBar{
+    max-width: 100%; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.9); 
+    box-shadow: 0px 5px 20px rgb(0, 0, 0, 0.2);
+}
+
+.navBar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navBar ul li{
+    list-style: none;
+    text-align: center;
+    margin: 0 0.8rem;
+}
+
+.navBar ul li a{
+    display: block;
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 1.1rem;
+    color: var(--bluecolor);
+    font-family: var(--font);
+    padding: 0.5rem;
+    transition: all 0.3s ease-in;
+}
+
+.navBar ul li a:hover{
+    color: blue;
+    font-weight: bold;
+    transform: scale(1.1);   
+}
+
+.navBar img{
+    width: 100px; /* Taille fixe pour le logo */
+    text-align: left;
+    margin-left: 0; /* Suppression de la marge négative */
+    cursor: pointer;
+}
+
+.navBar .btn_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    font-family: var(--font);
+    padding: 12px ;
+    margin-right: 0.4rem;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    background: red;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all ease-in-out 0.4s;    
+}
+
+.btn_login .arrow {
+    text-align: center;
+    display: block;
+    margin: 3px auto;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navBar a{
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn_login:hover{
+    background: blue;
+    transform: scale(1.1);
+}
+
+.menu, .close, .login{
+    display: none;
+}
+
+@media screen and (max-width: 1050px) {
+    
+    .navBar{
+        display: grid;
+        grid-template-columns: 5% 85% 5%;
+    }
+
+    .navBar img{
+        width: 100px;
+    }
+
+    .navBar ul{
+        margin: auto;
+
+    }
+
+    .navBar ul li a{
+        font-size: 0.7rem;
+        margin: 0 0.4rem;
+    }
+
+    .navBar .btn_login{
+        width: 115px;
+        padding: 8px 5px;
+        font-size: 0.6rem;
+        margin-left: -2rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+   
+    .navBar img{
+        width: 95px;
+        margin-left: -20px;
+    }
+
+    .navBar ul {
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .navBar ul li a{
+        margin: 0 1px;
+        text-align: center;
+    }
+
+}
+
+@media screen  and (max-width: 700px){
+
+    .navBar ul{
+       display: none;
+       width: 0%;
+       height: 0%;
+       opacity: 0;
+       transform: translateX(500px);
+       transition: all ease-in 0.7s;
+    }
+
+    .navBar ul li{
+        width: 100%;
+    }
+
+    .navBar ul li a{
+        color: white;
+        font-size: 0.8rem;
+        font-weight: bold;
+        border-bottom: 2px solid  ;
+    }
+
+
+    .navBar .menu_active{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0%;
+        right: 0%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: auto;
+        background: var(--textcolor);
+        opacity: 1;
+        z-index: 1000;
+        animation: slideIn 0.5s ease-out forwards;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    .menu{
+        display: block;
+        position: absolute;
+        font-size: 1.6rem;
+        top: 35%;
+        right: 5%;
+        color: var(--bluecolor);
+    }
+
+
+
+    .navBar{
+        display: flex;
+        top: -3%;
+        justify-content: space-between;
+    }
+
+    .close{
+        display: block;
+        position: absolute;
+        top: 3%;
+        left: 6%;
+        font-size: 1.2rem;
+        color: white;
+        transition: all 0.3s ease;
+        animation: rotateIn 0.5s ease-out;
+    }
+
+    @keyframes rotateIn {
+        from {
+            transform: rotate(-180deg);
+            opacity: 0;
+        }
+        to {
+            transform: rotate(0);
+            opacity: 1;
+        }
+    }
+
+    .close.closing {
+        animation: rotateOut 0.5s ease-in forwards;
+    }
+
+    @keyframes rotateOut {
+        from {
+            transform: rotate(0);
+            opacity: 1;
+        }
+        to {
+            transform: rotate(180deg);
+            opacity: 0;
+        }
+    }
+
+    .navBar .btn_login{
+        background: red;
+        margin-right: 3rem;
+    }
+}
+
+
+@media screen and (max-width: 300px) {
+    
+    .navBar ul {
+        width: 100%;
+    }
+
+    .navBar {
+        display: block;
+    }
+
+
+   .navBar .btn_login{
+        display: none;
+    }
+
+    .navBar ul .login{
+        display: block;
+        position: absolute;
+        top: 4%;
+        right: 10%;
+        font-size: 1.1rem;
+        color: white;
+    }
+
+
+}

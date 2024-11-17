@@ -1,38 +1,39 @@
-.App {
+
+:root{
+  --bluecolor: #7695FF;
+  --textcolor: #CD5C08;
+  --lightblue: #9DBDFF;
+  --orangecolor: #FFD7C4;
+  --lightorange: #FF9874;
+  --title-font: "Lato", sans-serif;
+  --font: "Josefin Sans", sans-serif;
+  /* --font: "Ubuntu", sans-serif; */
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+html{
+  font-size: 1.5rem;
+}
+
+.charging{
+  position: absolute;
+  top: 50%;
+  left: 40%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.charging p{
+  font-size: 1rem;
+  font-family: var(--font);
+  color: var(--lightorange);
+  font-weight: bold;
+  text-align: center;
+  margin: 0.4rem auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

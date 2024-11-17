@@ -1,0 +1,252 @@
+.header{
+    width: 100%;
+    margin-top: -20%;
+    padding: 10% 0;
+    height: 200vh;
+    padding-top: 13rem;
+    background: linear-gradient(125deg,#ff9974 , #f7f4eb, #ffffff );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 5px 20px rgb(0, 0, 0, 0.2);
+}
+
+
+.header .learningLogo{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 25rem;
+    height: 25rem;
+    transition: opacity 0.5s ease-in-out; 
+}
+
+.header_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 10% 7%;
+}
+
+
+
+.header_box h1{
+    font-size: 1.8rem;
+    color: white;
+    font-family: var(--title-font);
+    text-transform: capitalize;
+    font-weight: bold;
+    margin: 1rem 0 ;
+    z-index: 1;
+    text-shadow: 2px 2px 5px #999999d7;
+}
+
+
+.header_box .description{
+    width: 50%;
+    line-height: 1.5rem;
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 1rem 0 ;
+    z-index: 1;
+}
+
+.header_box_btn{
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    z-index: 1;
+}
+
+
+
+.header_box_btn1{
+    display: block;
+    height: 2.2rem;
+    font-size: 0.6rem;
+    font-family: var(--title-font);
+    font-weight: bold;
+    color: white;
+    margin-right: 2rem;
+    text-align: center;
+    padding: 0.7rem 1rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    background: var(--bluecolor);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    z-index: 1;
+}
+
+
+.header_box_btn1:hover{
+    background: blue;
+    transform: scale(1.1);
+}
+
+.header_box_btn_play{
+    color: white;
+    display: block;
+    font-size: 2.4rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(to left ,var(--orangecolor), var(--textcolor));
+    transition: transform ease-in-out 0.4s, background 0.5s ease;
+    z-index: 1;
+}
+
+.header_box_btn_play:hover{
+    background: var(--textcolor);
+    transform: scale(0.9);
+}
+
+
+.header_contente{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 1rem;
+    z-index: 1;
+}
+
+
+.header .header_contente p{
+    font-size: 0.8rem;
+    font-family: var(--font);
+    font-weight: 300;
+    z-index: 1;
+}
+
+.header_contente .checked{
+    color: var(--bluecolor)
+}
+
+@media screen and (max-width: 768px) {
+
+    .header_box{
+        margin-top: 5%;
+    }
+    .header .learningLogo{
+        width: 15rem;
+        height: 15rem;
+        top: 20%;
+    }
+
+    .header_box h1{
+        margin: 10% 0 2% 0;
+        font-size: 1.2rem;
+    }
+
+    .header_box .description{
+        font-size: 0.8rem;
+        line-height: 1rem;
+    }
+
+    .header .header_contente{
+        margin-top: 1.5rem  ;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header .header_contente p{
+        text-align: center;
+        font-size: 0.6rem;
+    }
+
+
+}
+
+@media screen and (max-width: 460px) {
+
+
+    .header_box {
+        margin-top: 20%;
+    }
+
+    .header_box h1{
+        font-size: 1rem;
+    }
+
+    .header_box .description{
+        font-size: 0.8rem;
+    }
+
+    .header .header_box_btn .header_box_btn1{
+        font-size: 0.5rem;
+        width: 100;
+        height: 40px;
+        padding: 10px;
+        margin: 0.3rem 0.3rem 0 0;
+        text-align: center;
+    }
+
+    .header .header_box_btn .header_box_btn_play{
+        width: 40px;
+        height: 40px;
+        margin: 0.3rem 0.3rem 0 0;
+    }
+
+    .header .header_contente{
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .header .header_contente p{
+        font-size: 0.5rem;
+    }
+
+
+}
+
+
+@media screen and (max-width: 360px){
+
+
+    .header .header_box {
+       margin-top: 35%;
+    }
+
+    .header .header_box_btn{
+        margin-top: -0.5rem;
+    }
+
+    .header .header_contente{
+        margin-top: 0.7rem;
+    }
+
+    .header .header_contente p{
+        font-size: 0.4rem;
+    }
+}
+
+@media screen and (max-width: 280px){
+
+ 
+    .header .header_box {
+       margin-top: 35%;
+    }
+
+    .header .header_box_btn{
+        margin-top: -0.5rem;
+    }
+
+    .header .header_contente{
+        margin-top: 0.7rem;
+    }
+
+    .header .header_contente p{
+        font-size: 0.4rem;
+    }
+}

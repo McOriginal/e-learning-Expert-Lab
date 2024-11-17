@@ -1,0 +1,248 @@
+.header_text{
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_text h1{
+    font-size: 2rem;
+    font-family: var(--titlefont);
+    color: var(--textcolor);
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.header_text > p{
+    font-size: 0.8rem;
+    text-align: center;
+    margin: auto;
+    font-style: italic;
+    font-family: var(--font);
+    font-weight: 300;
+}
+
+
+form{
+    margin: 0.2rem auto;
+    width: 400px;
+    padding: 10px;
+    display: flex;
+}
+
+
+.header_text   input{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.548);
+}
+
+
+.header_text form input::placeholder{
+    font-size: 0.5rem;
+    text-align: left;
+    padding: 14px;
+}
+
+
+form .searsh{
+    display: block;
+    position: relative;
+    margin-top: 0.4rem;
+    text-align: center;
+    right: 13%;
+    font-size: 1.5rem;
+    color: var(--bluecolor);
+}
+
+ .box_card{
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+ .box_card .card{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+    background: #ffffff;
+    border: 1px solid var(--lightblue);
+    border-radius: 15px;
+    animation: fadeIn 0.5s ease-out;
+    transition: transform 0.3s ease;
+}
+
+ .box_card .card:hover {
+    transform: translateY(-5px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+ .box_card .card .box_img{
+    width: 100%;
+    height: 300px;
+    margin-bottom: 15px;
+    border-radius: 15px 15px 0 0;
+    padding: 5px;
+}
+
+.box_card .box_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+
+.box_card .card .title{
+    font-size: 0.8rem;
+    font-family: var(--font);
+    color: #0a0a0a86;
+    padding-left: 10px;
+    text-transform: capitalize;
+}
+
+.box_card .card .detail{
+    font-size: 0.7rem;
+    padding-left: 10px;
+    font-family: var(--font);
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.box_card .card .lesson{
+    font-size: 0.7rem;
+    padding-left: 10px;
+    font-family: var(--font);
+    color: var(--lightblue);
+    padding: 10px 0 15px 10px;
+    font-weight: bold;
+}
+
+
+.aucun_cour{
+    font-size: 1.5rem;
+    margin: 30px auto;
+    text-align: center;
+    color: var(--lightorange);
+    font-family: var(--font);
+}
+
+.loading{
+    font-size: 1.5rem;
+    margin: 10px auto;
+    text-align: center;
+    color: var(--lightblue);
+    font-family: var(--font);
+}
+
+.error{
+    font-size: 1.5rem;
+    margin: 10px auto;
+    text-align: center;
+    color: red;
+    font-family: var(--font);
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .header_text  .inputbox{
+        width: 350px;
+        height: 50px;
+    }
+
+    form{
+        margin-bottom: 1.6rem;
+    }
+
+    form input::placeholder{
+        font-size: 0.5rem;
+    }
+
+    form .searsh{
+        bottom: 14%;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 430px) {
+
+    form {
+        width: 350px;
+        margin: 1rem auto;
+    }    
+
+}
+
+@media screen and (max-width: 350px) {
+
+
+    .header_text h1{
+        font-size: 1.2rem;
+    }
+
+    .header_text > p{
+        font-size: 0.6rem;
+    }
+    .header_text  .inputbox{
+        width: 210px;
+        height: 40px;
+    }
+
+    form{
+        width:  270px;
+    }
+
+    form .searsh{
+        font-size: 1rem;
+        margin-top: 0.7rem;
+    }
+
+
+    .box_card .card{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 200px;
+
+    }
+}
+
+
+
+
+@media screen and (max-width: 280px) {
+    
+    form{
+        width: 95%;
+        padding: 3px;
+    }
+}

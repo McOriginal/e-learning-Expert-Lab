@@ -1,25 +1,75 @@
-import logo from './logo.svg';
 import './App.css';
+import { RouterProvider, createBrowserRouter, Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import MainHeader from './components/MainHeader';
+import HomePage from './home/components/HomePage';
+import CoursPage from './Cours/CoursPage';
+import NewCoursForm from './admin/NewCoursForm';
+import OneCour from './Cours/Components/OneCour';
+import Connexion from './UserForm/Connexion';
+import Inscription from './UserForm/Incription';
+import Formateur from './Formateurs/Formateur';
+import AboutUs from './AboutUs/AboutUs';
+import UserMessage from './admin/UserMessages';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		const checkAuth = async () => {
+			try {
+				const response = await fetch('http://localhost:5000/check-auth', {
+					credentials: 'include'
+				});
+				const data = await response.json();
+				setIsAuthenticated(data.isAuthenticated);
+			} catch (error) {
+				console.error("Erreur lors de la vérification de l'authentification: ", error);
+			} finally {
+				setIsLoading(false);
+			}
+		};
+
+		checkAuth();
+	}, []);
+
+	const router = createBrowserRouter([
+		{
+			path: '/',
+			element: isAuthenticated ? <MainHeader setIsAuthenticated={setIsAuthenticated} /> : <Navigate to="/login" />,
+			children: [
+				{ index: true, element: <Navigate to="/home" /> },
+				{ path: 'home', element: <HomePage /> },
+				{ path: 'cours', element: <CoursPage /> },
+				{ path: 'cours/:courId', element: <OneCour /> },
+				{ path: 'formateurs', element: <Formateur /> },
+				{ path: 'aboutus', element: <AboutUs /> },
+			]
+		},
+		{ path: 'admin/newCours', element: <NewCoursForm /> },
+		{ path: 'admin/userMessages', element: <UserMessage /> },
+		{
+			path: '/signup',
+			element: <Inscription />,
+		},
+		{
+			path: '/login',
+			element: isAuthenticated ? (
+				<Navigate to="/home" />
+			) : (
+				<Connexion setIsAuthenticated={setIsAuthenticated} />
+			),
+		},
+	]);
+
+	if (isLoading) {
+		return <div className='charging'>
+			<p>Chargement...</p>
+			</div>;
+	}
+
+	return <RouterProvider router={router} />;
 }
 
 export default App;
