@@ -237,9 +237,16 @@ exports.obtenirMessages = (req, res) => {
 
 // Nouvelle méthode pour la connexion admin
 exports.loginAdmin = (req, res) => {
+
     const { email, password } = req.body;
 
-    // Vérification des identifiants admin
+    User.findOne({ email: email })
+    .then(user => {
+        if (!user) {
+            return res.status(401).json({ message: "Authentification admin échouée" });
+        }
+
+       // Vérification des identifiants admin
     if (email === 'admi@gmail.com' && password === 'admin123') {
         const token = jwt.sign(
             { userId: 'admin', email: email },
@@ -258,10 +265,13 @@ exports.loginAdmin = (req, res) => {
             userId: 'admin',
             isAuthenticated: true,
         });
-
+        
         return res.redirect('https://e-learning-expert-lab-frontend.onrender.com/admin/admincours');
 
-    } else {
-        return res.status(401).json({ message: "Authentification échouée" });
-    }
+            } else {
+                return res.status(401).json({ message: "Authentification échouée" });
+            }
+        });
+    
+    
 };
