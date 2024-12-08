@@ -68,7 +68,7 @@ exports.createUser = (req, res, next) => {
                     .then(result => {
                         console.log(result);
                        
-                       return res.redirect('http://localhost:3000/login');
+                       return res.redirect('https://e-learning-expert-lab-frontend.onrender.com/login');
                     })
                     .catch(err => {
                         console.log(err);
