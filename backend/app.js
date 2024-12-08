@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://e-learning-expert-lab-frontend.onrender.com',
     credentials: true
 }));
 
