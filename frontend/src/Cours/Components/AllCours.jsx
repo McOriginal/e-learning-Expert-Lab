@@ -68,7 +68,7 @@ const [cours, setCours] = useState([]);
                     value={searchTerm}
                     onChange={handleSearchChange}
                 />
-                <FaSearch className={classes.searsh} />
+                {/* <FaSearch className={classes.searsh} /> */}
             </form>
 
             <div className={classes.box_card}>

@@ -67,7 +67,6 @@ exports.createUser = (req, res, next) => {
                 newUser.save()
                     .then(result => {
                         console.log(result);
-                       
                        return res.redirect('https://e-learning-expert-lab-frontend.onrender.com/login');
                     })
                     .catch(err => {
@@ -78,6 +77,8 @@ exports.createUser = (req, res, next) => {
                         });
                     });
             });
+
+           
         })
         .catch(err => {
             console.log(err);
@@ -232,4 +233,35 @@ exports.obtenirMessages = (req, res) => {
     UserMessage.find().sort({ dateEnvoi: -1 })
         .then(messages => res.status(200).json(messages))
         .catch(error => res.status(500).json({ error }));
+};
+
+// Nouvelle méthode pour la connexion admin
+exports.loginAdmin = (req, res) => {
+    const { email, password } = req.body;
+
+    // Vérification des identifiants admin
+    if (email === 'admi@gmail.com' && password === 'admin123') {
+        const token = jwt.sign(
+            { userId: 'admin', email: email },
+            JWT_SECRET,
+            { expiresIn: '7d' }
+        );
+
+        res.cookie('token', token, {
+            httpOnly: true,
+            maxAge: 7 * 24 * 60 * 60 * 1000 // 7 jours
+        });
+
+        
+        res.status(200).json({
+            message: "Connexion admin réussie",
+            userId: 'admin',
+            isAuthenticated: true,
+        });
+
+        return res.redirect('https://e-learning-expert-lab-frontend.onrender.com/admin/admincours');
+
+    } else {
+        return res.status(401).json({ message: "Authentification échouée" });
+    }
 };

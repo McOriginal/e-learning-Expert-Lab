@@ -22,6 +22,28 @@
     color: var(--textcolor);
 }
 
+
+
+/* ##############"" Admin */
+
+button{
+    font-size: 0.7rem;
+    font-family: var(--font);
+    padding: 12px ;
+    margin-right: 0.4rem;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    background: red;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all ease-in-out 0.4s;   
+}
+
+
+
 @media screen and (max-width: 768px) {
     .footer {
         padding: 0.8rem;

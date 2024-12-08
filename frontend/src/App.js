@@ -11,6 +11,8 @@ import Inscription from './UserForm/Incription';
 import Formateur from './Formateurs/Formateur';
 import AboutUs from './AboutUs/AboutUs';
 import UserMessage from './admin/UserMessages';
+import UpdateCour from './admin/UpdateCour';
+import AdminAllCours from './Cours/Components/AdminAllCours';
 
 function App() {
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -48,6 +50,8 @@ function App() {
 			]
 		},
 		{ path: 'admin/newCours', element: <NewCoursForm /> },
+		{ path: 'admin/updateCour', element: <UpdateCour /> },
+		{ path: 'admin/admincours', element: <AdminAllCours /> },
 		{ path: 'admin/userMessages', element: <UserMessage /> },
 		{
 			path: '/signup',

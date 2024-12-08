@@ -9,7 +9,7 @@ router.post('/signup', userController.createUser);
 // Route pour la connexion d'un utilisateur
 router.post('/login', userController.loginUser);
 
-// Nouvelle route pour la déconnexion
+// Route pour la déconnexion
 router.post('/logout', userController.logoutUser);
 
 // Nouvelle route pour vérifier l'authentification
@@ -26,6 +26,9 @@ router.post('/user/message', userController.envoyerMessage);
 
 // Route pour obtenir tous les messages utilisateur (protégée, uniquement pour les administrateurs)
 router.get('/user/messages', /* middleware d'authentification admin */ userController.obtenirMessages);
+
+// Nouvelle route pour la connexion admin
+router.post('/admin/login', userController.loginAdmin);
 
 module.exports = router;
 

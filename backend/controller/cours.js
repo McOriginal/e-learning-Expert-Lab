@@ -115,3 +115,44 @@ exports.getLatestCours = (req, res, next) => {
             res.status(500).json({ error: err.message });
         });
 };
+
+exports.updateCours = (req, res, next) => {
+    const courId = req.params.courId;
+    const updatedData = {
+        title: req.body.title,
+        detail: req.body.detail,
+        duree: req.body.duree,
+        lessons: req.body.lessons,
+        imageUrl: req.body.imageUrl,
+        videos: req.body.videos // Assurez-vous de gérer les vidéos si nécessaire
+    };
+
+    Cours.findByIdAndUpdate(courId, updatedData, { new: true })
+        .then((cours) => {
+            if (!cours) {
+                return res.status(404).json({ message: 'Cours not found!' });
+            }
+            
+            return res.json(cours);
+        })
+        .catch((error) => {
+            console.log(error);
+            return res.status(500).json({ error: error.message });
+        });
+};
+
+exports.deleteCours = (req, res, next) => {
+    const courId = req.params.courId;
+
+    Cours.findByIdAndDelete(courId)
+        .then((result) => {
+            if (!result) {
+                return res.status(404).json({ message: 'Cours not found!' });
+            }
+            return res.status(200).json({ message: 'Cours deleted successfully!' });
+        })
+        .catch((error) => {
+            console.log(error);
+            return res.status(500).json({ error: error.message });
+        });
+};
