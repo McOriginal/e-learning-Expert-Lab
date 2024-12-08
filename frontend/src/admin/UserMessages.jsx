@@ -8,7 +8,7 @@ export default function UserMessage() {
     useEffect(() => {
         const fetchMessages = async () => {
             try {
-                const response = await axios.get('https://e-learning-expert-lab-backend.onrender.com/user/messages');
+                const response = await axios.get('https://e-learning-expert-lab-server.onrender.com/user/messages');
                 setMessages(response.data);
             } catch (error) {
                 console.error('Erreur lors de la récupération des messages:', error);

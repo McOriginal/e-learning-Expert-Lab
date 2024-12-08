@@ -31,7 +31,7 @@ export default function NavBarLinks({ setIsAuthenticated }) {
         setShowProgress(true);
         
         try {
-            const response = await axios.post('https://e-learning-expert-lab-backend.onrender.com/logout', {}, { withCredentials: true });
+            const response = await axios.post('https://e-learning-expert-lab-server.onrender.com/logout', {}, { withCredentials: true });
             console.log(response);
             setIsSuccess(true);
             setMessage('Déconnexion réussie !');

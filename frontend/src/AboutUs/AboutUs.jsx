@@ -32,7 +32,7 @@ export default function AboutUs() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://e-learning-expert-lab-backend.onrender.com/user/message', formData);
+      await axios.post('https://e-learning-expert-lab-server.onrender.com/user/message', formData);
       alert('Message envoyé avec succès !');
       setFormData({ nom: '', email: '', telephone: '', message: '' });
     } catch (error) {

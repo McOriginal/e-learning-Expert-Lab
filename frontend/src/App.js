@@ -19,7 +19,7 @@ function App() {
 	useEffect(() => {
 		const checkAuth = async () => {
 			try {
-				const response = await fetch('https://e-learning-expert-lab-backend.onrender.com/check-auth', {
+				const response = await fetch('https://e-learning-expert-lab-server.onrender.com/check-auth', {
 					credentials: 'include'
 				});
 				const data = await response.json();

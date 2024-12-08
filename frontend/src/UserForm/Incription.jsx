@@ -21,7 +21,7 @@ export default function Inscription() {
 		const userData = Object.fromEntries(formData.entries());
 
 		try {
-			const response = await fetch('https://e-learning-expert-lab-backend.onrender.com/signup', {
+			const response = await fetch('https://e-learning-expert-lab-server.onrender.com/signup', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

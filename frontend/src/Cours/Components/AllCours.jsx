@@ -17,7 +17,7 @@ const [cours, setCours] = useState([]);
         // Fonction pour récupérer les cours
         const fetchCours = async () => {
             try {
-                const response = await fetch('https://e-learning-expert-lab-backend.onrender.com/cours');
+                const response = await fetch('https://e-learning-expert-lab-server.onrender.com/cours');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
