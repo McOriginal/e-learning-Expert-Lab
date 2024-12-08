@@ -247,31 +247,69 @@ exports.loginAdmin = (req, res) => {
         }
 
        // Vérification des identifiants admin
-    if (email === 'admi@gmail.com' && password === 'admin123') {
-        const token = jwt.sign(
-            { userId: 'admin', email: email },
-            JWT_SECRET,
-            { expiresIn: '7d' }
-        );
+        // Comparaison du mot de passe
+        bcrypt.compare(password, user.password, (err, result) => {
+            if (err) {
+                return res.status(500).json({
+                    message: "Erreur lors de la vérification du mot de passe",
+                    error: err
+                });
+            }
+            if (result && email === 'admin@gmail.com') {
+                // Création du token JWT
+                const token = jwt.sign(
+                    { userId: user._id, email: user.email },
+                    JWT_SECRET,  // Utilisation de la clé secrète définie
+                    { expiresIn: '7d' }
+                );
 
-        res.cookie('token', token, {
-            httpOnly: true,
-            maxAge: 7 * 24 * 60 * 60 * 1000 // 7 jours
-        });
+                
+                // Envoi du token dans un cookie httpOnly
+                res.cookie('token', token, {
+                    httpOnly: true,
+                    // secure: process.env.NODE_ENV === 'production',
+                    maxAge: 7 * 24 * 60 * 60 * 1000 // 7 jours
+                });
 
-        
-        res.status(200).json({
-            message: "Connexion admin réussie",
-            userId: 'admin',
-            isAuthenticated: true,
-        });
-        
-        return res.redirect('https://e-learning-expert-lab-frontend.onrender.com/admin/admincours');
-
+                return res.status(200).json({
+                    message: "Authentification admin réussie",
+                    userId: user._id,
+                    isAuthenticated: true,
+                    // Ajoutez d'autres informations utiles si nécessaire
+                });
             } else {
-                return res.status(401).json({ message: "Authentification échouée" });
+                return res.status(401).json({ message: "Authentification admin échouée" });
             }
         });
+
+        });
+
+    
+    //    if (email === 'admi@gmail.com' && password === 'admin123') {
+    //     const token = jwt.sign(
+    //         { userId: 'admin', email: email },
+    //         JWT_SECRET,
+    //         { expiresIn: '7d' }
+    //     );
+
+    //     res.cookie('token', token, {
+    //         httpOnly: true,
+    //         maxAge: 7 * 24 * 60 * 60 * 1000 // 7 jours
+    //     });
+
+        
+    //     res.status(200).json({
+    //         message: "Connexion admin réussie",
+    //         userId: 'admin',
+    //         isAuthenticated: true,
+    //     });
+        
+    //     return res.redirect('https://e-learning-expert-lab-frontend.onrender.com/admin/admincours');
+
+    //         } else {
+    //             return res.status(401).json({ message: "Authentification échouée" });
+    //         }
+    //     });
     
     
 };
