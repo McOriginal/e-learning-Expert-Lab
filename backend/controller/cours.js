@@ -1,12 +1,17 @@
 const Cours = require('../db/dbCours');
- 
+const fs = require('fs');
 const multer = require('multer');
 const path = require('path');
 
 // Configuration de multer pour le stockage des fichiers vidéos
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads/videos'); // Dossier où seront stockées les vidéos
+        const dir = 'uploads/videos'; // Dossier où seront stockées les vidéos
+        // Vérifier si le dossier existe, sinon le créer
+        if (!fs.existsSync(dir)){
+            fs.mkdirSync(dir, { recursive: true }); // Créer le dossier
+        }
+        cb(null, dir);
     },
     filename: function (req, file, cb) {
         cb(null, Date.now() + '-' + file.originalname); // Nom unique pour chaque fichier
