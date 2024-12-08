@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { MdDeleteForever } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import AdminFooter from '../../Footer/AdminFooter';
+import CircularProgressBar from '../../CircularProgressBar/CircularProgressBar';
 
 export default function AdminAllCours(){
 
