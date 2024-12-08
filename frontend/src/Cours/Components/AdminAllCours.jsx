@@ -94,7 +94,6 @@ const [cours, setCours] = useState([]);
             setIsSuccess(true);
             setMessage('Déconnexion réussie !');
             setTimeout(() => {
-                setIsAuthenticated(false);
                 navigate('/login');
             }, 5000);
         } catch (error) {
