@@ -1,5 +1,6 @@
 import classes from './AllCours.module.css';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 import Cours from './Cours';
 import { useNavigate } from 'react-router-dom';
 import { MdDeleteForever } from "react-icons/md";
