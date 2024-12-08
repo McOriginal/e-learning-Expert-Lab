@@ -14,7 +14,7 @@ export default function LastCours() {
     const loader = async () => {
         setIsLoading(true);
         try {
-            const response = await fetch('http://localhost:5000/latestcours');
+            const response = await fetch('http://https://e-learning-expert-lab-backend.onrender.com/latestcours');
             const data = await response.json();
             setLatestCourses(data);
         } catch (error) {

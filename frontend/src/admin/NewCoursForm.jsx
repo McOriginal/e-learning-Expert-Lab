@@ -16,7 +16,7 @@ export default function NewCoursForm(){
                 <h1>Ajouter un cours</h1>
 
                 <div className={classes.contact}>
-                    <form action="http://localhost:5000/newcours" method='POST' encType="multipart/form-data">
+                    <form action="http://https://e-learning-expert-lab-backend.onrender.com/newcours" method='POST' encType="multipart/form-data">
 
                         <div className={classes.input_box}>
                             <input type="text" name="title" placeholder='Nom du cours'/>

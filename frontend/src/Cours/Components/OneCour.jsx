@@ -21,7 +21,7 @@ export default function OneCour() {
         // Fonction pour récupérer un cours spécifique
         const fetchCour = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/cours/${courId}`);
+                const response = await fetch(`http://https://e-learning-expert-lab-backend.onrender.com/cours/${courId}`);
                 if (!response.ok) {
                     throw new Error('Cours not found!');
                 }
@@ -71,7 +71,7 @@ export default function OneCour() {
                         
                     {cours && cours.videos && cours.videos.length > 0 && (
                     <video key={selectedVideo} controls>
-                        <source src={`http://localhost:5000/${cours.videos[selectedVideo]}`} type="video/mp4" />
+                        <source src={`http://https://e-learning-expert-lab-backend.onrender.com/${cours.videos[selectedVideo]}`} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>  
                     )} 
