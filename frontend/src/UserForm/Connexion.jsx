@@ -20,7 +20,7 @@ export default function Connexion({ setIsAuthenticated }) {
         // setIsSuccess(null); // Réinitialiser l'état de succès
 
         try {
-            const response = await fetch('http://https://e-learning-expert-lab-backend.onrender.com/login', {
+            const response = await fetch('https://e-learning-expert-lab-backend.onrender.com/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

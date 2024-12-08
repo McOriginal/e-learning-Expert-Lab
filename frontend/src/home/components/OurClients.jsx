@@ -14,7 +14,7 @@ export default function OurClients() {
 
 	const fetchCommentaires = async () => {
 		try {
-			const response = await fetch('http://https://e-learning-expert-lab-backend.onrender.com/commentaires');
+			const response = await fetch('https://e-learning-expert-lab-backend.onrender.com/commentaires');
 			const data = await response.json();
 			setCommentaires(data);
 		} catch (error) {
@@ -24,7 +24,7 @@ export default function OurClients() {
 
 	const handleSubmitCommentaire = async (contenu) => {
 		try {
-			const response = await fetch('http://https://e-learning-expert-lab-backend.onrender.com/commentaire', {
+			const response = await fetch('https://e-learning-expert-lab-backend.onrender.com/commentaire', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
