@@ -13,6 +13,7 @@ import AboutUs from './AboutUs/AboutUs';
 import UserMessage from './admin/UserMessages';
 import UpdateCour from './admin/UpdateCour';
 import AdminAllCours from './Cours/Components/AdminAllCours';
+import AdminConnexion from './UserForm/AdminConnexion';
 
 function App() {
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -49,6 +50,7 @@ function App() {
 				{ path: 'aboutus', element: <AboutUs /> },
 			]
 		},
+		{ path: 'admin/connexion', element: <AdminConnexion /> },
 		{ path: 'admin/newCours', element: <NewCoursForm /> },
 		{ path: 'admin/updateCour', element: <UpdateCour /> },
 		{ path: 'admin/admincours', element: <AdminAllCours /> },

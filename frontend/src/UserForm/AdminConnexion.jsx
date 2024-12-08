@@ -5,7 +5,7 @@ import classes from './Connexion.module.css';
 
 // Ce composant gère la connexion des utilisateurs et affiche une barre de progression circulaire lors de la soumission du formulaire.
 
-export default function Connexion({ setIsAuthenticated }) {
+export default function AdminConnexion({ setIsAuthenticated }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showProgress, setShowProgress] = useState(false);
@@ -15,9 +15,6 @@ export default function Connexion({ setIsAuthenticated }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // setShowProgress(true);
-
-        // setIsSuccess(null); // Réinitialiser l'état de succès
 
         try {
             const response = await fetch('https://e-learning-expert-lab-server.onrender.com/login', {
@@ -38,7 +35,7 @@ export default function Connexion({ setIsAuthenticated }) {
                 setMessage('Connexion réussie !');
                 setTimeout(() => {
                     setIsAuthenticated(true);
-                    navigate('/home');
+                    navigate('/admin/admincours');
                 }, 3000);
             } else {
                 setTimeout(() => {
@@ -88,8 +85,7 @@ export default function Connexion({ setIsAuthenticated }) {
                 <div className={classes.left}>
                     <h1>Bienvenue</h1>
                     <h4>Connectez-vous pour accéder à votre compte</h4>
-                    <button onClick={() => navigate('/signup')}>Je n'ai pas de compte</button>
-                    <button onClick={() => navigate('/admin/connexion')}>Je suis admin</button>
+                    <button onClick={() => navigate('/signup')}>utilisateurs</button>
                 </div>
             </div>
             {showProgress && (
