@@ -18,6 +18,7 @@ const [cours, setCours] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [showProgress, setShowProgress] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [message, setMessage] = useState('');
 
     useEffect(() => {
         // Fonction pour récupérer les cours
