@@ -11,7 +11,7 @@ export default function AdminFooter() {
 
     return (
         <div className={classes.footer}>
-            <button onClick={showMessages}>Message des utilisateurs</button>
+            <button className={classes.btn_Message} onClick={showMessages}>Message des utilisateurs</button>
             <p>Copyright © 2024 <NavLink to="https://cissemohamed.onrender.com" target='blank'>Cisse Mohamed</NavLink> Tous droits réservés</p>
 
         </div>
