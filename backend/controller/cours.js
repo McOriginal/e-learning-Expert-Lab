@@ -57,7 +57,7 @@ exports.addCours = (req, res, next) =>{
     cours.save()
     .then((result) =>{
         console.log(result);
-      return  res.redirect('https://e-learning-expert-lab-frontend.onrender.com/admin/newcours');
+      return  res.redirect('https://e-learning-expert-lab-frontend.onrender.com/newcours');
     })
     .catch((err) =>{
         console.log(err);
