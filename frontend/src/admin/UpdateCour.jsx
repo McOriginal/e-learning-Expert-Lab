@@ -29,7 +29,7 @@ export default function UpdateCour() {
         const formData = new FormData(event.target);
 
         try {
-            const response = await fetch(`https://e-learning-expert-lab-server.onrender.com/admin/admincours/${courId}`, {
+            const response = await fetch(`https://e-learning-expert-lab-server.onrender.com/admin/updateCour/${courId}`, {
                 method: 'PUT',
                 body: formData,
             });

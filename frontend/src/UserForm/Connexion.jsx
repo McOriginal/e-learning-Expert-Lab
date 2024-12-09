@@ -89,7 +89,7 @@ export default function Connexion({ setIsAuthenticated }) {
                     <h1>Bienvenue</h1>
                     <h4>Connectez-vous pour accéder à votre compte</h4>
                     <button onClick={() => navigate('/signup')}>Je n'ai pas de compte</button>
-                    <button onClick={() => navigate('/admin/connexion')}>Je suis admin</button>
+                    <button onClick={() => navigate('http://e-learning-expert-lab-frontend.onrender.com/admin/admincours')}>Je suis admin</button>
                 </div>
             </div>
             {showProgress && (
