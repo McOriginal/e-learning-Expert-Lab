@@ -35,7 +35,7 @@ export default function AdminConnexion({ setIsAuthenticated }) {
                 setMessage('Connexion réussie !');
                 setTimeout(() => {
                     setIsAuthenticated(true);
-                    navigate('/admin/admincours');
+                    navigate('https://e-learning-expert-lab-frontend.onrender.com/admin/admincours');
                 }, 3000);
             } else {
                 setTimeout(() => {

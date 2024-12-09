@@ -26,6 +26,12 @@
 
 /* ##############"" Admin */
 
+.box_btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .btn_Message{
     font-size: 0.7rem;
     font-family: var(--font);
@@ -33,10 +39,10 @@
     margin-right: 0.4rem;
     text-align: center;
     outline: none;
-    border: none;
+    border: 1px solid var(--bluecolor);
     border-radius: 1rem;
-    background: red;
-    color: white;
+    background: transparent;
+    color: var(--textcolor);
     font-weight: bold;
     cursor: pointer;
     transition: all ease-in-out 0.4s;   

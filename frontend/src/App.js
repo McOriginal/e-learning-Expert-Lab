@@ -50,6 +50,7 @@ function App() {
 				{ path: 'aboutus', element: <AboutUs /> },
 			]
 		},
+		
 		{ path: 'admin/connexion', element: <AdminConnexion /> },
 		{ path: 'admin/newCours', element: <NewCoursForm /> },
 		{ path: 'admin/updateCour/:courId', element: <UpdateCour /> },

@@ -101,7 +101,7 @@ form .searsh{
 /* #############" Admin style " */
 .card .icon .delete{
     color: var(--lightorange);
-    font-size: 3rem;
+    font-size: 1rem;
     cursor: pointer;
 }
 
