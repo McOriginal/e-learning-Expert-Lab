@@ -117,28 +117,34 @@ exports.getLatestCours = (req, res, next) => {
 };
 
 exports.updateCours = (req, res, next) => {
-    const courId = req.params.courId;
-    const updatedData = {
-        title: req.body.title,
-        detail: req.body.detail,
-        duree: req.body.duree,
-        lessons: req.body.lessons,
-        imageUrl: req.body.imageUrl,
-        videos: req.body.videos // Assurez-vous de gérer les vidéos si nécessaire
-    };
+    upload.array('videos', 10)(req, res, (err) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
 
-    Cours.findByIdAndUpdate(courId, updatedData, { new: true })
-        .then((cours) => {
-            if (!cours) {
-                return res.status(404).json({ message: 'Cours not found!' });
-            }
-            
-            return res.json(cours);
-        })
-        .catch((error) => {
-            console.log(error);
-            return res.status(500).json({ error: error.message });
-        });
+        const courId = req.params.courId;
+        const updatedData = {
+            title: req.body.title,
+            detail: req.body.detail,
+            duree: req.body.duree,
+            lessons: req.body.lessons,
+            imageUrl: req.body.imageUrl,
+            videos: req.files.map(file => file.path)
+        };
+
+        Cours.findByIdAndUpdate(courId, updatedData, { new: true })
+            .then((cours) => {
+                if (!cours) {
+                    return res.status(404).json({ message: 'Cours not found!' });
+                }
+                
+                return res.json(cours);
+            })
+            .catch((error) => {
+                console.log(error);
+                return res.status(500).json({ error: error.message });
+            });
+    });
 };
 
 exports.deleteCours = (req, res, next) => {
