@@ -3,7 +3,7 @@ import classes from './AllCours.module.css';
 
 
 
-export default function Cours({title, image, detail, duree, lessons, icons, onSelectCour}){
+export default function AdminCours({title, image, detail, duree, lessons, icons, onSelectCour}){
 
     return(
         <>

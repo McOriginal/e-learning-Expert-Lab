@@ -7,6 +7,7 @@ import { MdDeleteForever } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import AdminFooter from '../../Footer/AdminFooter';
 import CircularProgressBar from '../../CircularProgressBar/CircularProgressBar';
+import AdminCours from './AdminCours';
 
 export default function AdminAllCours(){
 
@@ -131,7 +132,7 @@ const [cours, setCours] = useState([]);
             
             {filteredCours.length > 0 ? 
             filteredCours.map((c) => (
-                <Cours key={c.title} 
+                <AdminCours key={c.title} 
                 title={c.title}
                 detail={c.detail}
                 duree={c.duree}
