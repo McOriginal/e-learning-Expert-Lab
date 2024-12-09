@@ -92,15 +92,17 @@ form .searsh{
     transform: translateY(-5px);
 }
 
-.box_card .card .modif{
+.box_card .card .icon{
     display: flex;
-    justify-content: center;
+    justify-content: end;
 }
 
 
 /* #############" Admin style " */
-.card .modif{
+.card .icon .delete{
     color: var(--lightorange);
+    font-size: 3rem;
+    cursor: pointer;
 }
 
 

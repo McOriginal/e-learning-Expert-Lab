@@ -17,7 +17,7 @@ export default function AdminConnexion({ setIsAuthenticated }) {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://e-learning-expert-lab-server.onrender.com/login', {
+            const response = await fetch('https://e-learning-expert-lab-server.onrender.com/admin/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

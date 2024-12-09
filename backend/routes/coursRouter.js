@@ -12,8 +12,8 @@ router.get('/latestcours', cours.getLatestCours );
 
 router.get('/cours/:courId', cours.getOnCour );
 
-router.put('/cours/:courId', cours.updateCours);
-router.delete('/cours/:courId', cours.deleteCours);
+router.put('/admin/updateCour/:courId', cours.updateCours);
+router.delete('/admin/admincours/:courId', cours.deleteCours);
 
 
 module.exports = router;

@@ -68,7 +68,7 @@ const [cours, setCours] = useState([]);
     function handleDeleteCour(courId) {
         const confirmDelete = window.confirm("Êtes-vous sûr de vouloir supprimer ce cours ?");
         if (confirmDelete) {
-            fetch(`https://e-learning-expert-lab-server.onrender.com/cours/${courId}`, {
+            fetch(`https://e-learning-expert-lab-server.onrender.com/admin/admincours/${courId}`, {
                 method: 'DELETE',
             })
             .then(response => {
@@ -140,7 +140,7 @@ const [cours, setCours] = useState([]);
                 image={c.imageUrl}
                 icons={
                     <>
-                        <MdDeleteForever className={classes.modif} onClick={() => handleDeleteCour(c._id)} />
+                        <MdDeleteForever className={classes.delete} onClick={() => handleDeleteCour(c._id)} />
                         {/* Autres icônes si nécessaire */}
                         {/* <MdEdit /> */}
                     </>

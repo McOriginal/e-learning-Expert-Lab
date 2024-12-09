@@ -52,7 +52,7 @@ function App() {
 		},
 		{ path: 'admin/connexion', element: <AdminConnexion /> },
 		{ path: 'admin/newCours', element: <NewCoursForm /> },
-		{ path: 'admin/updateCour', element: <UpdateCour /> },
+		{ path: 'admin/updateCour/:courId', element: <UpdateCour /> },
 		{ path: 'admin/admincours', element: <AdminAllCours /> },
 		{ path: 'admin/userMessages', element: <UserMessage /> },
 		{

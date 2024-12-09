@@ -15,7 +15,7 @@ export default function AdminCours({title, image, detail, duree, lessons, icons,
                 <p className={classes.title}>{title}</p>
                 <h4 className={classes.detail}>{detail} </h4>
                 <p className={classes.lesson}>{duree}  .  {lessons} lessons</p>
-                <div className={classes.modifier}>
+                <div className={classes.icon}>
                 {icons}
 
                 </div>
