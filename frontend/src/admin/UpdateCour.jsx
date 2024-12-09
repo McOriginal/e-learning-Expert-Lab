@@ -25,7 +25,7 @@ export default function UpdateCour() {
     }, [courId]);
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         const formData = new FormData(event.target);
 
         try {
@@ -52,7 +52,7 @@ export default function UpdateCour() {
                     <h1>Modifier le cours</h1>
 
                     <div className={classes.contact}>
-                        <form action='https://e-learning-expert-lab-server.onrender.com/cours/:courId' encType="multipart/form-data">
+                        <form onSubmit={handleSubmit} encType="multipart/form-data">
                             <div className={classes.input_box}>
                                 <input type="text" name="title" placeholder='Nom du cours' defaultValue={coursData?.title} />
                             </div>
