@@ -41,8 +41,8 @@
     outline: none;
     border: 1px solid var(--bluecolor);
     border-radius: 1rem;
-    background: transparent;
-    color: var(--textcolor);
+    background: var(--bluecolor);
+    color: #fff;
     font-weight: bold;
     cursor: pointer;
     transition: all ease-in-out 0.4s;   

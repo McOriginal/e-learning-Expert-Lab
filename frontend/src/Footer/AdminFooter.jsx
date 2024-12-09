@@ -6,10 +6,10 @@ export default function AdminFooter() {
  const navigate = useNavigate();
 
   function showMessages(){
-    navigate('https://e-learning-expert-lab-frontend.onrender.com/admin/userMessages')
+    navigate('/admin/userMessages')
   }
   function addCour(){
-    navigate('https://e-learning-expert-lab-frontend.onrender.com/admin/newcours')
+    navigate('/admin/newcours')
   }
 
     return (
